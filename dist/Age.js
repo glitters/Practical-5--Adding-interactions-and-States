@@ -13,6 +13,12 @@ export default function Age(props) {
   var emoji = props.value >= 18 ? '' : '🔞 ';
   return /*#__PURE__*/React.createElement(TitleLi, {
     title: "Age",
-    isHidden: isHidden
+    isHidden: isHidden,
+    onMouseEnter: function onMouseEnter() {
+      setIsHidden(false);
+    },
+    onMouseLeave: function onMouseLeave() {
+      setIsHidden(true);
+    }
   }, emoji, " ", props.value);
 }
