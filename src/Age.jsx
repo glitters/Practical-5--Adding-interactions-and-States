@@ -1,9 +1,7 @@
 import TitleLi from "./TitleLi";
 
 export default function Age(props) {
-    return (
-        <TitleLi title="Age" isHidden={true}>
-            {props.value < 18 ? "🔞" : ""}{props.value}
-        </TitleLi>
-    );
+    const [isHidden, setIsHidden] = React.useState(true);
+    const emoji = props.value >= 18 ? '' : '🔞 ';
+    return <TitleLi title="Age" isHidden={isHidden}>{emoji} {props.value}</TitleLi>;
 }
